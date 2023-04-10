@@ -373,19 +373,6 @@ ScrollTrigger.create({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // progress bar
 
 function illustratorProgressBar() {
@@ -430,17 +417,6 @@ const illustrator_Trigger = {
 };
 
 ScrollTrigger.create(illustrator_Trigger);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -689,6 +665,7 @@ view_more_btn.addEventListener('click', function () {
         view_more_true = true;
 
     }
+    ScrollTrigger.refresh();
 });
 
 
@@ -735,30 +712,6 @@ read_more_btn.addEventListener('click', function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Help
 
 const help_h_Animation = gsap.timeline()
@@ -769,11 +722,6 @@ help_h_Animation
         { x: "100", opacity: 0, },
         { x: "0", opacity: 1, duration: 1.5, ease: "expo", stagger: 4 }
     )
-// .fromTo(
-//     "#help-heading span",
-//     { stagger: 0, ease: 'expo' },
-//     { duration: 2, delay: -1.5, ease: 'expo' }
-// );
 
 ScrollTrigger.create({
     trigger: "#help-container",
@@ -906,33 +854,6 @@ ScrollTrigger.create({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // About animation
 
 const hire_Animation = gsap.fromTo(
@@ -974,11 +895,60 @@ ScrollTrigger.create({
 
 
 
-// Media Query
 
-if (window.matchMedia("(max-width: 440px)").matches) {
 
-    //    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Media Query Moblie view
+
+if (window.matchMedia("(max-width: 552px)").matches) {
+
+    //  Paralax Gallery
     const figure_1_Animation = gsap.fromTo(
         ".center-gl",
         { y: "-40%" },
@@ -1168,7 +1138,7 @@ else {
     ScrollTrigger.create({
         pin: '#help-main',
         pinSpacing: true,
-        trigger: '#box-1',
+        trigger: '#main-box',
         start: 'top 35%',
         end: '200% top',
         animation: help_main,
@@ -1241,6 +1211,63 @@ else {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Media query tablet view
+
+if (window.matchMedia("(max-width:768px)").matches) {
+
+} else { }
 
 
 
