@@ -516,7 +516,7 @@ html {
 
 .fs-heading p,
 .fs-heading span {
-     font-size: 6.3vw;
+     font-size: 6vw;
      line-height: 115%;
      padding-right: 22px;
      font-family: Satoshi-Medium;
@@ -1889,10 +1889,14 @@ html {
 
 
 /* Media query tablet view */
-@media only screen and (max-width: 820px) and (min-width: 552px) {
+@media only screen and (max-width: 820px) and (min-width: 553px) {
 
      html{
           font-size: 14px;
+     }
+
+     .fs-heading p span{
+          font-size: 5.8vw;
      }
 
      .px-3rem{
@@ -1904,6 +1908,7 @@ html {
           position: inherit;
           padding-left: 0;
           padding-right: 0;
+          padding-top: 33vh;
      }
 
      .menu ul li a p{
@@ -1928,11 +1933,88 @@ html {
      }
 
      .paralax-gl-con {
-          height: 100vh;
+          height: 80vh;
      }
 
+     .skills-container{
+          width: 33%;
+     }
 
+     .flex-wrap-mob{
+          flex-wrap: wrap;
+     }
 
+     .danger-tab{
+          width: 106px;
+     }
+
+     .fs-3rem { 
+          margin-bottom: .5em;
+          line-height: 1.2em;
+     }
+
+     .work-img-arrow{
+          width:41px;
+          transform: scale(.8) translate(10px,10px);
+     }
+
+     #work-container{
+          flex-wrap: wrap;
+          flex-direction: column;
+          gap: 1.5em;
+     }
+
+     .work-heading{
+          width: 100%;
+          margin-left: 0;
+     }
+
+     .mt-2_5rem{
+          margin-top: 1em;
+     }
+
+     .view-btn{
+          padding: .25em 1.5em;
+     }
+
+     #help-main{
+          flex-direction: column;
+          height: 80vh;
+     }
+
+     #help-main section{
+          width: 100%;
+     }
+
+     .footer-btn-mob{
+          flex-wrap: wrap;
+     }
+
+     #hire-section{
+          flex-wrap: wrap;
+          flex-direction: column;
+          gap: 1.5em;
+     }
+
+     .w-100-mob{
+          width: 100%;
+     }
+
+     .mb-2rem{
+          margin-bottom: .2em;
+          width: 70%;
+     }
+
+     .footer-btn-mob{
+          margin-top: 1.5em;
+     }
+
+     .object-2{
+          width: 75vw;
+    left: 50vw;
+    top: -32vh;
+    bottom: auto;
+}
 
 
 

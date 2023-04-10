@@ -378,7 +378,7 @@ ScrollTrigger.create({
 function illustratorProgressBar() {
     var xvaluenow = 100; // change percent value here
     var rotatenum = 'rotate(' + xvaluenow * 1.8 + 'deg)';
-    var progress = document.getElementById('progress');
+
     var progress_circle = document.getElementById('progress-circle');
     var progress_style = document.getElementById('progress-style');
 
@@ -404,19 +404,20 @@ function illustratorProgressBar() {
   \ ";
 }
 
-const illustrator_Trigger = {
+
+ScrollTrigger.create({
     trigger: "#progress",
     scroller: '.smooth-scroll',
     start: "top 85%",
     end: "bottom top",
-    toggleActions: "restart none none reset",
+    repeatRefresh: true,
+    toggleActions: "restart none restart reset",
     onEnter: function () {
         illustratorProgressBar();
     },
-    repeat: true,
-};
+});
 
-ScrollTrigger.create(illustrator_Trigger);
+
 
 
 
@@ -1115,6 +1116,147 @@ if (window.matchMedia("(max-width: 552px)").matches) {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Media query tablet view
+
+else if (window.matchMedia("(max-width:820px) and (min-width:552px)").matches) {
+
+
+    //  Paralax Gallery
+    const figure_1_Animation = gsap.fromTo(
+        ".center-gl",
+        { y: "-40%" },
+        { y: "80%", duration: 6, ease: "none" }
+    );
+
+    ScrollTrigger.create({
+        trigger: ".section-2",
+        start: "top bottom",
+        end: "200% top",
+        animation: figure_1_Animation,
+        scrub: 1,
+        velocity: 10,
+        scroller: '.smooth-scroll',
+    });
+
+
+
+
+
+
+    const figure_2_Animation = gsap.fromTo(
+        ".side-gl",
+        { y: "-5%", },
+        { y: "80%", duration: 1, ease: "none" }
+    );
+
+    ScrollTrigger.create({
+        trigger: ".section-2",
+        start: "top bottom",
+        end: "200% top",
+        animation: figure_2_Animation,
+        scrub: .8,
+        velocity: 30,
+        scroller: '.smooth-scroll',
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const help_main = gsap.timeline();
+
+    help_main
+        .fromTo(
+            '.box-2',
+            {
+                top: '300%'
+            },
+            {
+                top: '0%',
+                stagger: .5,
+                ease: 'expo',
+            },
+        );
+
+    ScrollTrigger.create({
+        pin: '#help-main',
+        pinSpacing: true,
+        trigger: '#help-heading',
+        start: 'top 15%',
+        end: '300vh top',
+        animation: help_main,
+        repeatRefresh: true,
+        toggleActions: 'restart none none reset',
+        scroller: '.smooth-scroll',
+        scrub: .4,
+    })
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 else {
 
     // help container for larger viewport size
@@ -1263,11 +1405,7 @@ else {
 
 
 
-// Media query tablet view
 
-if (window.matchMedia("(max-width:768px)").matches) {
-
-} else { }
 
 
 
