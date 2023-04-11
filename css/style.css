@@ -955,7 +955,7 @@ html {
 }
 
 .fs-1_5 {
-     font-size: 1rem;
+     font-size: 1.5rem;
 }
 
 .view-btn {
@@ -1403,10 +1403,14 @@ html {
 
 /* Media Query Mobile View */
 
-@media only screen and (max-width: 552px) {
+@media only screen and (max-width: 552px){
 
      html {
           font-size: 14px;
+     }
+
+     .link{
+          font-size: 1rem;
      }
 
 
@@ -1834,6 +1838,8 @@ html {
           right: -22em;
      }
 
+     
+
 
 
 
@@ -2023,4 +2029,42 @@ html {
 
 
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:375px){
+     #box-1 div:nth-child(1),
+     .box-2 div:nth-child(1){
+          flex-wrap: wrap;
+     }
+
+     #box-1,
+     .box-2{
+          height: 35vh;
+     }
+     
 }
