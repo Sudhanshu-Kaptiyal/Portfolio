@@ -54,63 +54,63 @@ locoScroll.on('scroll', function (scrollData) {
 
 
 // Banner Onload animation
-window.addEventListener('load', function () {
-    gsap.fromTo('.onload-header', {
-        y: '-150%',
-        opacity: 0,
-    }, {
-        duration: 1.5,
-        y: '0',
-        ease: 'power2.out',
-        opacity: 1,
-        delay: 2,
-    });
+// window.addEventListener('load', function () {
+//     gsap.fromTo('.onload-header', {
+//         y: '-150%',
+//         opacity: 0,
+//     }, {
+//         duration: 1.5,
+//         y: '0',
+//         ease: 'power2.out',
+//         opacity: 1,
+//         delay: 2,
+//     });
 
-    // background-image
-    gsap.fromTo('.onload-bg-image', {
-        opacity: 0,
-    }, {
-        duration: 2,
-        ease: 'power2.out',
-        opacity: 1,
-        delay: 2,
-    });
-
-
-    gsap.fromTo('.onload-heading p span', {
-        y: '-100%'
-    }, {
-        duration: .1,
-        y: '0%',
-        stagger: .03,
-        ease: 'expo',
-        delay: .5,
-    });
+//     // background-image
+//     gsap.fromTo('.onload-bg-image', {
+//         opacity: 0,
+//     }, {
+//         duration: 2,
+//         ease: 'power2.out',
+//         opacity: 1,
+//         delay: 2,
+//     });
 
 
-    gsap.fromTo('.onload-hero-links', {
-        y: '100%',
-        opacity: 0,
-    }, {
-        duration: 1.5,
-        y: '0%',
-        ease: 'expo',
-        opacity: 1,
-        delay: 2,
-    });
+//     gsap.fromTo('.onload-heading p span', {
+//         y: '-100%'
+//     }, {
+//         duration: .1,
+//         y: '0%',
+//         stagger: .03,
+//         ease: 'expo',
+//         delay: .5,
+//     });
 
 
-    gsap.fromTo('#onload-parallax', {
-        y: '25%',
-        opacity: 0,
-    }, {
-        duration: 1.5,
-        y: '0%',
-        ease: 'expo',
-        delay: 2.5,
-        opacity: 1,
-    });
-});
+//     gsap.fromTo('.onload-hero-links', {
+//         y: '100%',
+//         opacity: 0,
+//     }, {
+//         duration: 1.5,
+//         y: '0%',
+//         ease: 'expo',
+//         opacity: 1,
+//         delay: 2,
+//     });
+
+
+//     gsap.fromTo('#onload-parallax', {
+//         y: '25%',
+//         opacity: 0,
+//     }, {
+//         duration: 1.5,
+//         y: '0%',
+//         ease: 'expo',
+//         delay: 2.5,
+//         opacity: 1,
+//     });
+// });
 
 
 

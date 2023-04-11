@@ -632,7 +632,7 @@ html {
 
 .paralax-gl-con {
      background-color: #1D1F21;
-     height: 180vh;
+     height: 140vh;
      overflow: hidden;
 }
 
@@ -766,7 +766,7 @@ html {
 
 
 .about-svg {
-     top: -115%;
+     top: -100%;
      left: 50%;
      transform: translate(-50%, 10%) scale(1.1);
      width: 600px;
@@ -948,6 +948,7 @@ html {
 .fs-3rem,
 .fs-3rem span {
      font-size: 3rem;
+     line-height: 1em;
 }
 
 .mt-2_5rem {
@@ -1338,6 +1339,11 @@ html {
      top: 0;
      right: 0;
      left: 0;
+}
+
+#box-1>div img,
+.box-2>div img{
+     width: 4.5em;
 }
 
 
@@ -1905,6 +1911,11 @@ html {
           font-size: 5.8vw;
      }
 
+     .about-svg {
+          top: -110%;
+          left: 56%;
+     }
+
      .px-3rem{
           padding-right: 1.5em;
           padding-left: 1.5em;
@@ -2065,6 +2076,10 @@ html {
      #box-1,
      .box-2{
           height: 35vh;
+     }
+
+     #hire-section section:nth-child(2) p:nth-child(2){
+          line-height: 1.1em;
      }
      
 }
