@@ -53,6 +53,7 @@ locoScroll.on('scroll', function (scrollData) {
 
 
 
+
 // Banner Onload animation
 window.addEventListener('load', function () {
     gsap.fromTo('.onload-header', {
@@ -705,7 +706,7 @@ ScrollTrigger.create({
     pinSpacing: true,
     trigger: '#main-box',
     start: 'center center',
-    markers: true,
+    // markers: true,
     end: '200% top',
     animation: help_main,
     repeatRefresh: true,
