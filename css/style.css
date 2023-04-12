@@ -1334,6 +1334,10 @@ html {
      padding: 3em;
 }
 
+.p_1_5 {
+     padding: 1.5em;
+}
+
 .onload-bg-image {
      position: absolute;
      top: 0;
@@ -1346,6 +1350,9 @@ html {
      width: 4.5em;
 }
 
+.gap_4{
+     gap:1.5rem;
+}
 
 
 
@@ -2082,4 +2089,21 @@ html {
           line-height: 1.1em;
      }
      
+}
+
+
+
+
+
+@media only screen and (max-width:1060px) and (min-width:821px){
+
+     #box-1 div:nth-child(1),
+     .box-2 div:nth-child(1){
+          gap: inherit;
+          justify-content: space-between;
+     }
+
+     .work-tab{
+          padding: 0.05rem 0.85rem
+     }
 }

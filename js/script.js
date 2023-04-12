@@ -54,63 +54,63 @@ locoScroll.on('scroll', function (scrollData) {
 
 
 // Banner Onload animation
-// window.addEventListener('load', function () {
-//     gsap.fromTo('.onload-header', {
-//         y: '-150%',
-//         opacity: 0,
-//     }, {
-//         duration: 1.5,
-//         y: '0',
-//         ease: 'power2.out',
-//         opacity: 1,
-//         delay: 2,
-//     });
+window.addEventListener('load', function () {
+    gsap.fromTo('.onload-header', {
+        y: '-150%',
+        opacity: 0,
+    }, {
+        duration: 1.5,
+        y: '0',
+        ease: 'power2.out',
+        opacity: 1,
+        delay: 2,
+    });
 
-//     // background-image
-//     gsap.fromTo('.onload-bg-image', {
-//         opacity: 0,
-//     }, {
-//         duration: 2,
-//         ease: 'power2.out',
-//         opacity: 1,
-//         delay: 2,
-//     });
-
-
-//     gsap.fromTo('.onload-heading p span', {
-//         y: '-100%'
-//     }, {
-//         duration: .1,
-//         y: '0%',
-//         stagger: .03,
-//         ease: 'expo',
-//         delay: .5,
-//     });
+    // background-image
+    gsap.fromTo('.onload-bg-image', {
+        opacity: 0,
+    }, {
+        duration: 2,
+        ease: 'power2.out',
+        opacity: 1,
+        delay: 2,
+    });
 
 
-//     gsap.fromTo('.onload-hero-links', {
-//         y: '100%',
-//         opacity: 0,
-//     }, {
-//         duration: 1.5,
-//         y: '0%',
-//         ease: 'expo',
-//         opacity: 1,
-//         delay: 2,
-//     });
+    gsap.fromTo('.onload-heading p span', {
+        y: '-100%'
+    }, {
+        duration: .1,
+        y: '0%',
+        stagger: .03,
+        ease: 'expo',
+        delay: .5,
+    });
 
 
-//     gsap.fromTo('#onload-parallax', {
-//         y: '25%',
-//         opacity: 0,
-//     }, {
-//         duration: 1.5,
-//         y: '0%',
-//         ease: 'expo',
-//         delay: 2.5,
-//         opacity: 1,
-//     });
-// });
+    gsap.fromTo('.onload-hero-links', {
+        y: '100%',
+        opacity: 0,
+    }, {
+        duration: 1.5,
+        y: '0%',
+        ease: 'expo',
+        opacity: 1,
+        delay: 2,
+    });
+
+
+    gsap.fromTo('#onload-parallax', {
+        y: '25%',
+        opacity: 0,
+    }, {
+        duration: 1.5,
+        y: '0%',
+        ease: 'expo',
+        delay: 2.5,
+        opacity: 1,
+    });
+});
 
 
 
@@ -654,18 +654,25 @@ let view_more_true = true;
 view_more_btn.addEventListener('click', function () {
 
     if (view_more_true) {
-        view_more.style.maxHeight = "100vh";
+        view_more.style.maxHeight = "100px";
         view_more_text.style.display = "none";
         view_less_text.style.display = "block";
         view_more_true = false;
     }
     else {
-        view_more.style.maxHeight = "0vh";
+        view_more.style.maxHeight = "0px";
         view_more_text.style.display = "block";
         view_less_text.style.display = "none";
         view_more_true = true;
 
     }
+
+    const websiteHeight = document.body.offsetHeight;
+    ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.pin) {
+            trigger.pinSpacingTop = websiteHeight;
+        }
+    });
     ScrollTrigger.refresh();
 });
 
@@ -674,6 +681,42 @@ view_more_btn.addEventListener('click', function () {
 
 
 
+// help container for larger viewport size
+
+const help_main = gsap.timeline();
+
+help_main
+    .fromTo(
+        '.box-2',
+        {
+            top: '200%'
+        },
+        {
+            top: '0%',
+            stagger: .5,
+            ease: 'expo',
+        },
+    );
+
+
+
+ScrollTrigger.create({
+    pin: '#help-main',
+    pinSpacing: true,
+    trigger: '#main-box',
+    start: 'center center',
+    markers: true,
+    end: '200% top',
+    animation: help_main,
+    repeatRefresh: true,
+    toggleActions: 'restart none none reset',
+    scroller: '.smooth-scroll',
+    scrub: .5,
+    onUpdate: function (self) {
+        const websiteHeight = document.body.offsetHeight;
+        self.pinSpacingTop = websiteHeight;
+    }
+});
 
 
 
@@ -1071,6 +1114,8 @@ if (window.matchMedia("(max-width: 552px)").matches) {
             view_more_true = true;
 
         }
+
+
     });
 
 
@@ -1259,36 +1304,6 @@ else if (window.matchMedia("(max-width:820px) and (min-width:552px)").matches) {
 
 else {
 
-    // help container for larger viewport size
-
-    const help_main = gsap.timeline();
-
-    help_main
-        .fromTo(
-            '.box-2',
-            {
-                top: '200%'
-            },
-            {
-                top: '0%',
-                stagger: .5,
-                ease: 'expo',
-            },
-        );
-
-
-    ScrollTrigger.create({
-        pin: '#help-main',
-        pinSpacing: true,
-        trigger: '#main-box',
-        start: 'top 35%',
-        end: '200% top',
-        animation: help_main,
-        repeatRefresh: true,
-        toggleActions: 'restart none none reset',
-        scroller: '.smooth-scroll',
-        scrub: .5,
-    });
 
 
 
