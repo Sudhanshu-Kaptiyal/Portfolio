@@ -61,6 +61,7 @@ ScrollTrigger.scrollerProxy(".smooth-scroll", {
 
 
 // Preloader
+// Preloader
 const fill = gsap.timeline({
     paused: 'true',
 });
@@ -75,29 +76,27 @@ fill.to('#preloader', {
     width: '0%',
 });
 
-
-let width = 1;
 let bar = document.querySelector('#barconfirm');
-let id;
-
-function move() {
-    id = setInterval(frame, 10);
-}
-
-function frame() {
-    if (width >= 100) {
-        clearInterval(id);
-        fill.play();
-    } else {
-        width++;
-        bar.style.width = width + '%';
-        document.querySelector('#percent').innerHTML = width + '%';
-    }
-};
+let percent = document.querySelector('#percent');
 
 document.addEventListener('DOMContentLoaded', function () {
-    move();
+    let loaded = 0;
+    let total = document.getElementsByTagName('*').length;
+    let id = setInterval(frame, 10);
+
+    function frame() {
+        if (loaded >= total) {
+            clearInterval(id);
+            fill.play();
+        } else {
+            loaded++;
+            let progress = (loaded / total) * 100;
+            bar.style.width = progress + '%';
+            percent.innerHTML = Math.floor(progress) + '%';
+        }
+    }
 });
+
 
 
 
