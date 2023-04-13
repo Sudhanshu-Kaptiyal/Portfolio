@@ -61,7 +61,6 @@ ScrollTrigger.scrollerProxy(".smooth-scroll", {
 
 
 // Preloader
-// Preloader
 const fill = gsap.timeline({
     paused: 'true',
 });
@@ -79,7 +78,7 @@ fill.to('#preloader', {
 let bar = document.querySelector('#barconfirm');
 let percent = document.querySelector('#percent');
 
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
     let loaded = 0;
     let total = document.getElementsByTagName('*').length;
     let id = setInterval(frame, 10);
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
             percent.innerHTML = Math.floor(progress) + '%';
         }
     }
-});
+};
 
 
 
