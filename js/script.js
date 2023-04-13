@@ -61,40 +61,40 @@ ScrollTrigger.scrollerProxy(".smooth-scroll", {
 
 
 // Preloader
-const fill = gsap.timeline({
-    paused: 'true',
-});
+// const fill = gsap.timeline({
+//     paused: 'true',
+// });
 
-fill.to('#percent, #bar', {
-    duration: .2,
-    opacity: 0,
-    zIndex: -1,
-});
-fill.to('#preloader', {
-    duration: .8,
-    width: '0%',
-});
+// fill.to('#percent, #bar', {
+//     duration: .2,
+//     opacity: 0,
+//     zIndex: -1,
+// });
+// fill.to('#preloader', {
+//     duration: .8,
+//     width: '0%',
+// });
 
-let bar = document.querySelector('#barconfirm');
-let percent = document.querySelector('#percent');
+// let bar = document.querySelector('#barconfirm');
+// let percent = document.querySelector('#percent');
 
-window.onload = function () {
-    let loaded = 0;
-    let total = document.getElementsByTagName('*').length;
-    let id = setInterval(frame, 10);
+// window.onload = function () {
+//     let loaded = 0;
+//     let total = document.getElementsByTagName('*').length;
+//     let id = setInterval(frame, 10);
 
-    function frame() {
-        if (loaded >= total) {
-            clearInterval(id);
-            fill.play();
-        } else {
-            loaded++;
-            let progress = (loaded / total) * 100;
-            bar.style.width = progress + '%';
-            percent.innerHTML = Math.floor(progress) + '%';
-        }
-    }
-};
+//     function frame() {
+//         if (loaded >= total) {
+//             clearInterval(id);
+//             fill.play();
+//         } else {
+//             loaded++;
+//             let progress = (loaded / total) * 100;
+//             bar.style.width = progress + '%';
+//             percent.innerHTML = Math.floor(progress) + '%';
+//         }
+//     }
+// };
 
 
 
