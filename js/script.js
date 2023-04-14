@@ -59,42 +59,108 @@ ScrollTrigger.scrollerProxy(".smooth-scroll", {
 
 
 
+// Preloader animation using GSAP
+const fill = gsap.timeline({
+    paused: 'true',
+});
 
-// Preloader
-// const fill = gsap.timeline({
-//     paused: 'true',
-// });
+// Fade out the progress bar and percentage text
+fill.to('#percent, #bar', {
+    duration: .2,
+    opacity: 0,
+    zIndex: -1,
+});
 
-// fill.to('#percent, #bar', {
-//     duration: .2,
-//     opacity: 0,
-//     zIndex: -1,
-// });
-// fill.to('#preloader', {
-//     duration: .8,
-//     width: '0%',
-// });
+// Shrink the preloader element to 0% width
+fill.to('#preloader', {
+    duration: .6,
+    height: '0%',
+});
 
-// let bar = document.querySelector('#barconfirm');
-// let percent = document.querySelector('#percent');
+// Get references to the progress bar and percentage text
+let bar = document.querySelector('#barconfirm');
+let percent = document.querySelector('#percent');
 
-// window.onload = function () {
-//     let loaded = 0;
-//     let total = document.getElementsByTagName('*').length;
-//     let id = setInterval(frame, 10);
+// Start the loading animation when the DOM content is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    let loaded = 0;
+    let total = document.getElementsByTagName('*').length;
+    let id = setInterval(frame, 10);
 
-//     function frame() {
-//         if (loaded >= total) {
-//             clearInterval(id);
-//             fill.play();
-//         } else {
-//             loaded++;
-//             let progress = (loaded / total) * 100;
-//             bar.style.width = progress + '%';
-//             percent.innerHTML = Math.floor(progress) + '%';
-//         }
-//     }
-// };
+    function frame() {
+        if (loaded >= total) {
+            clearInterval(id);
+            // Start the preloader animation
+            fill.play();
+
+
+
+
+            // Banner Onload animation
+            gsap.fromTo('.onload-header', {
+                y: '-150%',
+                opacity: 0,
+            }, {
+                duration: 1.5,
+                delay: .2,
+                y: '0',
+                ease: 'power2.out',
+                opacity: 1,
+                delay: 2,
+            });
+
+            // background-image
+            gsap.fromTo('.onload-bg-image', {
+                opacity: 0,
+            }, {
+                duration: 2,
+                ease: 'power2.out',
+                opacity: 1,
+                delay: 2,
+            });
+
+            gsap.fromTo('.onload-heading p span', {
+                y: '-100%'
+            }, {
+                duration: .1,
+                y: '0%',
+                stagger: .03,
+                ease: 'expo',
+                delay: .5,
+            });
+
+            gsap.fromTo('.onload-hero-links', {
+                y: '100%',
+                opacity: 0,
+            }, {
+                duration: 1.5,
+                y: '0%',
+                ease: 'expo',
+                opacity: 1,
+                delay: 2,
+            });
+
+            gsap.fromTo('#onload-parallax', {
+                y: '25%',
+                opacity: 0,
+            }, {
+                duration: 1.5,
+                y: '0%',
+                ease: 'expo',
+                delay: 2.5,
+                opacity: 1,
+            });
+        } else {
+            loaded++;
+            let progress = (loaded / total) * 100;
+            // Update the progress bar and percentage text
+            bar.style.width = progress + '%';
+            percent.innerHTML = Math.floor(progress) + '%';
+        }
+    }
+});
+
+
 
 
 
@@ -143,64 +209,64 @@ locoScroll.on('scroll', function (scrollData) {
 
 
 
-// Banner Onload animation
-window.addEventListener('load', function () {
-    gsap.fromTo('.onload-header', {
-        y: '-150%',
-        opacity: 0,
-    }, {
-        duration: 1.5,
-        y: '0',
-        ease: 'power2.out',
-        opacity: 1,
-        delay: 2,
-    });
+// // Banner Onload animation
+// window.addEventListener('load', function () {
+//     gsap.fromTo('.onload-header', {
+//         y: '-150%',
+//         opacity: 0,
+//     }, {
+//         duration: 1.5,
+//         y: '0',
+//         ease: 'power2.out',
+//         opacity: 1,
+//         delay: 2,
+//     });
 
-    // background-image
-    gsap.fromTo('.onload-bg-image', {
-        opacity: 0,
-    }, {
-        duration: 2,
-        ease: 'power2.out',
-        opacity: 1,
-        delay: 2,
-    });
-
-
-    gsap.fromTo('.onload-heading p span', {
-        y: '-100%'
-    }, {
-        duration: .1,
-        y: '0%',
-        stagger: .03,
-        ease: 'expo',
-        delay: .5,
-    });
+//     // background-image
+//     gsap.fromTo('.onload-bg-image', {
+//         opacity: 0,
+//     }, {
+//         duration: 2,
+//         ease: 'power2.out',
+//         opacity: 1,
+//         delay: 2,
+//     });
 
 
-    gsap.fromTo('.onload-hero-links', {
-        y: '100%',
-        opacity: 0,
-    }, {
-        duration: 1.5,
-        y: '0%',
-        ease: 'expo',
-        opacity: 1,
-        delay: 2,
-    });
+//     gsap.fromTo('.onload-heading p span', {
+//         y: '-100%'
+//     }, {
+//         duration: .1,
+//         y: '0%',
+//         stagger: .03,
+//         ease: 'expo',
+//         delay: .5,
+//     });
 
 
-    gsap.fromTo('#onload-parallax', {
-        y: '25%',
-        opacity: 0,
-    }, {
-        duration: 1.5,
-        y: '0%',
-        ease: 'expo',
-        delay: 2.5,
-        opacity: 1,
-    });
-});
+//     gsap.fromTo('.onload-hero-links', {
+//         y: '100%',
+//         opacity: 0,
+//     }, {
+//         duration: 1.5,
+//         y: '0%',
+//         ease: 'expo',
+//         opacity: 1,
+//         delay: 2,
+//     });
+
+
+//     gsap.fromTo('#onload-parallax', {
+//         y: '25%',
+//         opacity: 0,
+//     }, {
+//         duration: 1.5,
+//         y: '0%',
+//         ease: 'expo',
+//         delay: 2.5,
+//         opacity: 1,
+//     });
+// });
 
 
 
