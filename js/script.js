@@ -83,6 +83,9 @@ let percent = document.querySelector('#percent');
 
 // Start the loading animation when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Disable scrolling
+    document.body.style.overflow = 'hidden';
+
     let loaded = 0;
     let total = document.getElementsByTagName('*').length;
     let id = setInterval(frame, 10);
@@ -92,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(id);
             // Start the preloader animation
             fill.play();
+            // Enable scrolling
+            document.body.style.overflow = '';
+
 
 
 
@@ -205,68 +211,6 @@ locoScroll.on('scroll', function (scrollData) {
 
 
 
-
-
-
-
-// // Banner Onload animation
-// window.addEventListener('load', function () {
-//     gsap.fromTo('.onload-header', {
-//         y: '-150%',
-//         opacity: 0,
-//     }, {
-//         duration: 1.5,
-//         y: '0',
-//         ease: 'power2.out',
-//         opacity: 1,
-//         delay: 2,
-//     });
-
-//     // background-image
-//     gsap.fromTo('.onload-bg-image', {
-//         opacity: 0,
-//     }, {
-//         duration: 2,
-//         ease: 'power2.out',
-//         opacity: 1,
-//         delay: 2,
-//     });
-
-
-//     gsap.fromTo('.onload-heading p span', {
-//         y: '-100%'
-//     }, {
-//         duration: .1,
-//         y: '0%',
-//         stagger: .03,
-//         ease: 'expo',
-//         delay: .5,
-//     });
-
-
-//     gsap.fromTo('.onload-hero-links', {
-//         y: '100%',
-//         opacity: 0,
-//     }, {
-//         duration: 1.5,
-//         y: '0%',
-//         ease: 'expo',
-//         opacity: 1,
-//         delay: 2,
-//     });
-
-
-//     gsap.fromTo('#onload-parallax', {
-//         y: '25%',
-//         opacity: 0,
-//     }, {
-//         duration: 1.5,
-//         y: '0%',
-//         ease: 'expo',
-//         delay: 2.5,
-//         opacity: 1,
-//     });
-// });
 
 
 
@@ -631,10 +575,10 @@ works.forEach(figure => {
 
             // Enable transition property after resetting the values
             setTimeout(() => {
-                icon1.style.transition = '';
-                icon2.style.transition = '';
-                icon3.style.transition = '';
-                arrow.style.transition = '';
+                icon1.style.transition = 'none';
+                icon2.style.transition = 'none';
+                icon3.style.transition = 'none';
+                arrow.style.transition = 'none';
             }, 1);
         }, 500);
     });
@@ -797,82 +741,6 @@ ScrollTrigger.create({
 
 
 
-// view-more-btn
-
-const view_more_btn = document.querySelector('#view-more-btn');
-const view_more = document.querySelector(('#view-more'));
-const view_more_text = document.querySelector('#view-more-text');
-const view_less_text = document.querySelector('#view-less-text');
-
-
-let view_more_true = true;
-
-view_more_btn.addEventListener('click', function () {
-
-    if (view_more_true) {
-        view_more.style.maxHeight = "100px";
-        view_more_text.style.display = "none";
-        view_less_text.style.display = "block";
-        view_more_true = false;
-    }
-    else {
-        view_more.style.maxHeight = "0px";
-        view_more_text.style.display = "block";
-        view_less_text.style.display = "none";
-        view_more_true = true;
-
-    }
-
-    const websiteHeight = document.body.offsetHeight;
-    ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.pin) {
-            trigger.pinSpacingTop = websiteHeight;
-        }
-    });
-    ScrollTrigger.refresh();
-});
-
-
-
-
-
-
-// help container for larger viewport size
-
-const help_main = gsap.timeline();
-
-help_main
-    .fromTo(
-        '.box-2',
-        {
-            top: '200%'
-        },
-        {
-            top: '0%',
-            stagger: .5,
-            ease: 'expo',
-        },
-    );
-
-
-
-ScrollTrigger.create({
-    pin: '#help-main',
-    pinSpacing: true,
-    trigger: '#main-box',
-    start: 'center center',
-    // markers: true,
-    end: '200% top',
-    animation: help_main,
-    repeatRefresh: true,
-    toggleActions: 'restart none none reset',
-    scroller: '.smooth-scroll',
-    scrub: .5,
-    onUpdate: function (self) {
-        const websiteHeight = document.body.offsetHeight;
-        self.pinSpacingTop = websiteHeight;
-    }
-});
 
 
 
@@ -880,30 +748,6 @@ ScrollTrigger.create({
 
 
 
-
-const read_more_btn = document.querySelector('#read-more-btn');
-const read_more = document.querySelector(('#read-more'));
-const read_more_text = document.querySelector('#read-more-text');
-const read_less_text = document.querySelector('#read-less-text');
-
-
-let read_more_true = true;
-
-read_more_btn.addEventListener('click', function () {
-
-    if (read_more_true) {
-        read_more.style.maxHeight = "100vh";
-        read_more_text.style.display = "none";
-        read_less_text.style.display = "block";
-        read_more_true = false;
-    }
-    else {
-        read_more.style.maxHeight = "0vh";
-        read_more_text.style.display = "block";
-        read_less_text.style.display = "none";
-        read_more_true = true;
-    }
-});
 
 
 
@@ -1090,62 +934,7 @@ ScrollTrigger.create({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Media Query Moblie view
-
 if (window.matchMedia("(max-width: 552px)").matches) {
 
     //  Paralax Gallery
@@ -1187,92 +976,6 @@ if (window.matchMedia("(max-width: 552px)").matches) {
     });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // read-more-btn
-
-    const about_read_btn = document.querySelector('#about-read-btn');
-    const about_read_para = document.querySelector(('#about-read-para'));
-    const about_read_more = document.querySelector('#about-read-more');
-    const about_read_less = document.querySelector('#about-read-less');
-
-
-    let about_read_true = true;
-
-    about_read_btn.addEventListener('click', function () {
-
-        if (about_read_true) {
-            about_read_para.style.maxHeight = "30vh";
-            about_read_more.style.display = "none";
-            about_read_less.style.display = "block";
-            about_read_true = false;
-        }
-        else {
-            about_read_para.style.maxHeight = "0vh";
-            about_read_more.style.display = "block";
-            about_read_less.style.display = "none";
-            about_read_true = true;
-        }
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // view-more-btn
-
-    const view_more_btn = document.querySelector('#view-more-btn');
-    const view_more = document.querySelector(('#view-more'));
-    const view_more_text = document.querySelector('#view-more-text');
-    const view_less_text = document.querySelector('#view-less-text');
-
-
-    let view_more_true = true;
-
-    view_more_btn.addEventListener('click', function () {
-
-        if (view_more_true) {
-            view_more.style.maxHeight = "125vh";
-            view_more_text.style.display = "none";
-            view_less_text.style.display = "block";
-            view_more_true = false;
-        }
-        else {
-            view_more.style.maxHeight = "0vh";
-            view_more_text.style.display = "block";
-            view_less_text.style.display = "none";
-            view_more_true = true;
-
-        }
-
-
-    });
 
 
 
@@ -1437,37 +1140,7 @@ else if (window.matchMedia("(max-width:820px) and (min-width:552px)").matches) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 else {
-
-
-
-
-
-
-
-
-
     // Paralax gallery
 
     const figure_1_Animation = gsap.fromTo(
@@ -1514,42 +1187,52 @@ else {
 
 
 
+
+
+
+
+
+
+
+    // help container for larger viewport size
+
+    const help_main = gsap.timeline();
+
+    help_main
+        .fromTo(
+            '.box-2',
+            {
+                top: '200%'
+            },
+            {
+                top: '0%',
+                stagger: .5,
+                ease: 'expo',
+            },
+        );
+
+
+
+    ScrollTrigger.create({
+        pin: '#help-main',
+        pinSpacing: true,
+        trigger: '#main-box',
+        start: 'center center',
+        end: '200% top',
+        animation: help_main,
+        repeatRefresh: true,
+        toggleActions: 'restart none none reset',
+        scroller: '.smooth-scroll',
+        scrub: .5,
+        onUpdate: function (self) {
+            const websiteHeight = document.body.offsetHeight;
+            self.pinSpacingTop = websiteHeight;
+        }
+    });
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
