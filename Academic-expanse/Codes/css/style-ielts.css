@@ -1,0 +1,501 @@
+
+.position{
+    position: absolute!important;
+    z-index: 5!important;
+    right: 0px;
+}
+
+
+
+
+
+.main-banner{
+    width: 100%;
+    position: relative;
+    max-height: 1000px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.main-banner img{
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+}
+
+.banner-elements{
+    position: absolute;
+    left: -80px;
+    bottom: -80px;
+    background-color: white;
+    padding: 100px;
+    border-radius: 50%;
+    width: 525px;
+    height: 525px;
+    filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.35));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-element-1 p {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.banner-element-1 ul{
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.banner-element-1 ul li{
+    font-weight: 500;
+    font-size: 12px;
+    color: #595959;
+    list-style: disc;
+    margin-bottom: 10px
+}
+
+.banner-element-1 button{
+    border: none;
+    display: inherit;
+    margin: auto;
+    background-color: #F58840;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 7.5px 25px;
+    border-radius: 5px;
+    cursor:pointer;
+    transition: color 0.2s ease-in-out;
+    box-shadow: 2px 2px 3.6px rgba(0, 0, 0, 0.25);
+}
+
+.banner-element-1 button:hover{
+    color: #000;
+}
+
+
+
+
+
+.banner-element-2{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #F58840;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-element-2 p{
+    color: white;
+    width: 80%;
+}
+
+
+
+
+/* Testing Experience */
+
+
+.testing-container{
+    background-color: #f2f2f2;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 30px;
+}
+
+.testing-container>p {
+    font-weight: 600;
+    font-size: 24px;
+    color: #3D3D3D;
+    margin-bottom: 40px;
+}
+
+.testing-container>p span{
+    color: #F58840;
+}
+
+.testing-element{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.testing-element div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testing-element div img {
+    width: 40px;
+}
+
+.testing-element div p {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+    color: #000;
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* What is IELTS */
+
+.what-ielts-container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 80px auto 0px auto;
+    padding: 40px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F58840;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+/* Video */
+
+.b-video{
+    width: 47%;
+    height: 293px;
+    max-width: 1440px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.video{
+    width: 100%;
+}
+
+
+.b-video:hover .controls{
+    transform: translateY(0px);
+}
+
+.controls{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10px;
+    background: black;
+    transform: translateY(100%) translateY(-5px);
+    transition: all 0.2s ease;
+}
+
+.buttons{
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 24px);
+}
+
+.buttons>button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.buttons>button::before{
+    content: '\f04b';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transform: translateX(2px);
+    display: inline-block;
+    font-size: 25px;
+    color: #F58840;
+    -webkit-font-smoothing:antialiased;
+}
+
+.buttons button.play::before {
+    content: '\f04b';
+}
+
+.buttons button.pause::before {
+    content: '\f04c';
+}
+
+
+
+
+
+.oranger-bar{
+    height: 10px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.orange-juice{
+    height: 10px;
+    width:0 ;
+    background-color: #F58840;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.what-ielts-text{
+    width: 50%;
+}
+
+.paragraph-heading{
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.paragraph{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    margin-bottom: 40px;
+}
+
+.color-white{
+    color: white;
+}
+
+.button{
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #000;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.button:hover{
+    color: #000;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Migration */
+
+.center-align-migration{
+    max-width: 1440px;
+    padding:40px;
+    margin: auto;
+}
+
+.migration-container{
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
+    display: flex;
+    justify-content: space-between;
+}
+
+.migration-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+}
+
+.migration-items p:nth-child(2){
+    font-weight: 600;
+    font-size: 24px;
+    color: #000;
+    margin: 10px 0px 10px 0px;
+}
+
+.migration-items p:nth-child(3){
+    font-weight: 500;
+    font-size: 14px;
+    color: #595959;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* Why IELTS */
+
+.why-ielts-container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0px auto 0px auto;
+    padding: 40px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 25%);
+}
+
+.why-ielts-text{
+    width: 50%;
+}
+
+.color-black{
+    color: #000;
+}
+
+.why-ielts-text span{
+    color: #F58840;
+}
+
+.why-ielts-text ul{
+    margin-left: 20px;
+}
+
+.why-ielts-text ul li{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 20px;
+    list-style:number;
+}
+
+.border-black{
+    border: 1.5px solid #000;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* bottom Banner */
+
+
+.bottom-container{
+    position: relative;
+}
+
+.bottom-container img{
+    object-fit: cover;
+    width: 100%;
+    max-height: 300px;
+}
+
+.bottom-container p {
+    font-weight: 500;
+font-size: 20px;
+line-height: 23px;
+color: white;
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+width: 700px;
+}
+
+.bottom-container a {
+    padding: 10px 20px;
+    font-weight: 600;
+font-size: 16px;
+color: #000;
+border-radius: 5px;
+position: absolute;
+top: 80%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+transition:color 0.2s ease;
+}
+
+.bottom-container a:hover{
+    color: #F58840;
+}
