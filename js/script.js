@@ -220,6 +220,57 @@ locoScroll.on('scroll', function (scrollData) {
 
 
 
+function scrollToSection(targetSection) {
+    const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+}
+
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
+const btn4 = document.getElementById('btn5');
+
+btn1.addEventListener('click', function () {
+    const aboutSection = document.getElementById('about-section');
+    scrollToSection(aboutSection);
+});
+
+btn2.addEventListener('click', function () {
+    const workSection = document.getElementById('work-section');
+    scrollToSection(workSection);
+});
+
+btn3.addEventListener('click', function () {
+    const skillSection = document.getElementById('skill-section');
+    scrollToSection(skillSection);
+});
+
+btn4.addEventListener('click', function () {
+    const contactSection = document.getElementById('contact-section');
+    scrollToSection(contactSection);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -340,7 +391,7 @@ menuTimeline
         duration: 1,
         ease: 'expo',
     })
-    .to('.menu ul li a', {
+    .to('.menu ul li', {
         duration: .5,
         opacity: 1,
         y: 0,
@@ -381,7 +432,10 @@ menuTimeline
 const menuButton = document.querySelector('.hamburger-box');
 const elementsToBlur = document.querySelectorAll('.blur');
 const header_contact = document.querySelector('#header-contact');
+const menuItems = document.querySelectorAll('.menu li');
+const hamburgerBox = document.querySelector('.hamburger-box');
 let isPlaying = false;
+let isHamburgerBoxOpen = false;
 
 menuButton.addEventListener('click', function () {
     if (!isPlaying) {
@@ -393,11 +447,15 @@ menuButton.addEventListener('click', function () {
         menuTimeline.play();
         header_contact.style.display = "none";
         isPlaying = true;
+        hamburgerBox.classList.add('hamburger-open');
+        isHamburgerBoxOpen = true;
     }
     else if (menuTimeline.reversed()) {
         menuTimeline.play();
         isPlaying = true;
         header_contact.style.display = "none";
+        hamburgerBox.classList.add('hamburger-open');
+        isHamburgerBoxOpen = true;
     }
     else {
         menuTimeline.reverse(.5);
@@ -410,9 +468,25 @@ menuButton.addEventListener('click', function () {
             return;
         }
         isPlaying = false;
+        hamburgerBox.classList.remove('hamburger-open');
+        isHamburgerBoxOpen = false;
     }
 });
 
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (isPlaying) {
+            menuTimeline.reverse(.5);
+            header_contact.style.display = "flex";
+            elementsToBlur.forEach(element => {
+                element.classList.remove('blurred');
+            });
+            isPlaying = false;
+            hamburgerBox.classList.remove('hamburger-open');
+            isHamburgerBoxOpen = false;
+        }
+    });
+});
 
 document.addEventListener('click', function (event) {
     if (!event.target.closest('.menu') && isPlaying && menuTimeline.progress() !== 0) {
@@ -422,12 +496,12 @@ document.addEventListener('click', function (event) {
             element.classList.remove('blurred');
         });
         isPlaying = false;
-        if (Hamburger_Box_Open) {
-            Hamburger_Box.classList.remove('hamburger-open');
-            Hamburger_Box_Open = false;
-        }
+        hamburgerBox.classList.remove('hamburger-open');
+        isHamburgerBoxOpen = false;
     }
 });
+
+
 
 
 

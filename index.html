@@ -26,9 +26,11 @@
     <!-- Header -->
     <header class="container-100 px-3rem d-flex justify-content-between py-3 position-fixed z-1" id="header">
         <section class="onload-header">
-            <p class="Satoshi-Medium text-uppercase fs-1_25rem margin-none"> Sudhanshu <span class="Satoshi-Medium text-uppercase fs-1_25rem Text-Secondary">
+            <p class="Satoshi-Medium text-uppercase fs-1_25rem margin-none" id="HeaderName"> Sudhanshu 
+                <span class="Satoshi-Medium text-uppercase fs-1_25rem Text-Secondary">
                 Kaptiyal 
-            </span></p>
+                </span>
+        </p>
         </section>
 
 
@@ -61,37 +63,48 @@
     <!-- Menu -->
     <article class="menu w-98 box-background-bg position-fixed rounded-5" >
         <ul class="px-4">
-            <li>
-                <a href="#"> 
+            <li id="btn1">
                     <p class="menu-text-hover">About</p>  
                     <span class="menu-line"><span class="menu-dot"></span></span>
                     <span class="menu-line-mobile"></span>
-                </a>
             </li>
 
-            <li> 
-                <a href="#"> <p class="menu-text-hover">Works</p> <span class="menu-line"><span class="menu-dot"></span></span>
+            <li id="btn2"> 
+                <p class="menu-text-hover">Works</p> <span class="menu-line"><span class="menu-dot"></span></span>
                     <span class="menu-line-mobile"></span>
-                </a> 
             </li>
 
-            <li> 
-                <a href="#"><p class="menu-text-hover">Skills</p> <span class="menu-line"><span class="menu-dot"></span></span>
-                    <span class="menu-line-mobile"></span></a> 
+            <li id="btn3"> 
+                <p class="menu-text-hover">Skills</p> <span class="menu-line"><span class="menu-dot"></span></span>
+                    <span class="menu-line-mobile"></span>
             </li>
 
-            <li>
-                <a href="#"><p class="menu-text-hover">C.V.</p> <span class="menu-line"><span class="menu-dot"></span></span>
-                    <span class="menu-line-mobile"></span></a> 
+            <li id="btn4">
+                <p class="menu-text-hover">C.V.</p> <span class="menu-line"><span class="menu-dot"></span></span>
+                    <span class="menu-line-mobile"></span>
             </li>
 
-            <li>
-                <a href="#"><p class="menu-text-hover">Contact</p> <span class="menu-line"><span class="menu-dot"></span></span>
-                </a> 
+            <li id="btn5">
+                <p class="menu-text-hover">Contact</p> <span class="menu-line"><span class="menu-dot"></span></span>
             </li>
         </ul>
     </article>
     </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <main class="smooth-scroll position-absolute z-n1 blur" id="main" data-scroll-container>
@@ -291,7 +304,7 @@
 
 
     <!-- Progress Bar -->
-    <article class="max-width d-flex flex-column gap_3 mt-main px-3rem mt_6em">
+    <article class="max-width d-flex flex-column gap_3 mt-main px-3rem mt_6em" id="skill-section">
         <section class="text-center">
             <p class="text-uppercase"> a quick look into my skillset</p>
         </section>
@@ -372,7 +385,7 @@
 
 
     <!-- Works -->
-    <article class="container-100 mt-main box-background-bg">
+    <article class="container-100 mt-main box-background-bg" id="work-section">
 
         <!-- Work container -->
         <div class="max-width px-3rem pt-6 pb-6">
@@ -692,7 +705,7 @@
 
 
     <!-- footer  -->
-    <article class="max-width footer-container d-flex justify-content-between position-relative">
+    <article class="max-width footer-container d-flex justify-content-between position-relative" id="contact-section">
         
         <section class="d-flex">
             <p class="text-uppercase">

@@ -467,7 +467,7 @@ body {
      margin-bottom: 0 !important;
 }
 
-.menu ul li a {
+.menu ul li {
      opacity: 0;
      transform: translateY(-25px);
      padding-top: 44vh;
@@ -482,16 +482,20 @@ body {
      margin-bottom: 1.5rem;
 }
 
-.menu ul li a p {
+.menu ul li p {
      font-family: GeneralSans-Regular;
      text-align: left;
      font-size: 1.7rem;
      transition: transform .3s ease;
 }
 
+.menu ul li:nth-child(5) span{
+     display: none;
+}
 
 
-.menu ul li a:hover .menu-text-hover {
+
+.menu ul li:hover .menu-text-hover {
      color: #EA3325;
      transform: scale(1.1) translateX(20px) translateY(-10px)
 }
@@ -531,7 +535,7 @@ body {
      padding-right: 0px;
 }
 
-.menu ul li a:hover .menu ul li {
+.menu ul li:hover .menu ul li {
      transform: scale(1.3);
 }
 
@@ -1395,6 +1399,14 @@ body {
      gap:1.5rem;
 }
 
+#HeaderName{
+     cursor: pointer;
+}
+
+.footer-btn-mob{
+     flex-wrap: wrap;
+}
+
 
 
 
@@ -1502,16 +1514,17 @@ body {
      .menu ul li {
           display: flex;
           justify-content: center;
+          padding-top: 0vh;
      }
 
-     .menu ul li a {
+     .menu ul li bu {
           padding: 0;
           width: 100vw;
           display: flex;
           justify-content: center;
      }
 
-     .menu ul li a p {
+     .menu ul li p {
           color: #46494D;
      }
 
@@ -1966,14 +1979,14 @@ body {
           padding-left: 1.5em;
      }
 
-     .menu ul li a{
+     .menu ul li{
           position: inherit;
           padding-left: 0;
           padding-right: 0;
           padding-top: 33vh;
      }
 
-     .menu ul li a p{
+     .menu ul li p{
           text-align: center;
           font-size: 1.5rem;
      }
