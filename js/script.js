@@ -221,17 +221,19 @@ locoScroll.on('scroll', function (scrollData) {
 
 
 function scrollToSection(targetSection) {
-    const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-    });
+    const myArticle = document.getElementById("header");
+    const articleHeight = myArticle.offsetHeight;
+    const targetPosition = targetSection.getBoundingClientRect().top + locoScroll.scroll.instance.scroll.y - articleHeight + 10;
+    locoScroll.scrollTo(targetPosition);
 }
+
+
 
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
 const btn4 = document.getElementById('btn5');
+
 
 btn1.addEventListener('click', function () {
     const aboutSection = document.getElementById('about-section');
@@ -252,6 +254,11 @@ btn4.addEventListener('click', function () {
     const contactSection = document.getElementById('contact-section');
     scrollToSection(contactSection);
 });
+
+
+
+
+
 
 
 
